@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medical Care</title>
+<title>MediCare Advanced</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -16,24 +16,23 @@
 }
 
 body {
-    background: #f4f9ff;
-    overflow-x: hidden;
+    background: linear-gradient(to right, #eef5ff, #f9fcff);
 }
 
 /* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 15px 50px;
-    background: rgba(255,255,255,0.8);
-    backdrop-filter: blur(10px);
+    padding: 15px 60px;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 nav h2 {
-    color: #0077ff;
+    color: #0066ff;
 }
 
 nav ul {
@@ -42,36 +41,34 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #333;
-    transition: 0.3s;
+    font-weight: 500;
 }
 
 nav ul li a:hover {
-    color: #0077ff;
+    color: #0066ff;
 }
 
 /* HERO */
 .hero {
-    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 50px;
+    padding: 80px 60px;
 }
 
 .hero-text {
     max-width: 50%;
-    animation: fadeInLeft 1.5s ease;
 }
 
 .hero-text h1 {
-    font-size: 48px;
-    color: #003366;
+    font-size: 50px;
+    color: #002b5b;
 }
 
 .hero-text p {
@@ -79,50 +76,41 @@ nav ul li a:hover {
 }
 
 .hero img {
-    width: 400px;
+    width: 420px;
+    border-radius: 20px;
     animation: float 3s infinite ease-in-out;
 }
 
 /* BUTTON */
 .btn {
-    padding: 12px 25px;
+    padding: 12px 30px;
     border: none;
-    background: #0077ff;
+    background: #0066ff;
     color: white;
-    border-radius: 30px;
+    border-radius: 25px;
     cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #005bcc;
 }
 
 /* CARDS */
 .cards {
-    padding: 60px 50px;
+    padding: 60px;
     text-align: center;
-}
-
-.cards h2 {
-    margin-bottom: 40px;
 }
 
 .card-container {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .card {
     width: 300px;
-    padding: 20px;
     border-radius: 20px;
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(15px);
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     transition: 0.4s;
-    cursor: pointer;
     transform: translateY(50px);
     opacity: 0;
 }
@@ -134,37 +122,31 @@ nav ul li a:hover {
 
 .card img {
     width: 100%;
-    border-radius: 15px;
+    height: 200px;
+    object-fit: cover;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px) scale(1.03);
 }
 
 .card h3 {
-    margin: 15px 0;
+    margin: 15px 0 10px;
+}
+
+.card p {
+    padding: 0 15px 20px;
 }
 
 /* FOOTER */
 footer {
-    background: #003366;
+    background: #002b5b;
     color: white;
     padding: 30px;
     text-align: center;
 }
 
-/* ANIMATIONS */
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
+/* ANIMATION */
 @keyframes float {
     0%,100% { transform: translateY(0); }
     50% { transform: translateY(-15px); }
@@ -176,13 +158,8 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-
     .hero-text {
         max-width: 100%;
-    }
-
-    .hero img {
-        margin-top: 20px;
     }
 }
 </style>
@@ -204,34 +181,40 @@ footer {
 <!-- HERO -->
 <section class="hero">
     <div class="hero-text">
-        <h1>Your Health, Our Priority</h1>
-        <p>Modern healthcare solutions with expert doctors and advanced technology.</p>
+        <h1>Advanced Medical Care</h1>
+        <p>Providing modern healthcare solutions with professional doctors and updated technology.</p>
         <button class="btn">Book Appointment</button>
     </div>
-    <img src="https://images.unsplash.com/photo-1580281657527-47c5c2f2c6d1" alt="doctor">
+    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d" alt="modern doctor">
 </section>
 
-<!-- CARDS -->
+<!-- SERVICES -->
 <section class="cards">
     <h2>Our Services</h2>
     <div class="card-container">
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1588776814546-ec7e67c44e5f">
+            <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c">
             <h3>General Checkup</h3>
-            <p>Routine health checkups to ensure your well-being.</p>
+            <p>Modern diagnostic tools and routine health checkups.</p>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322">
+            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc">
             <h3>Cardiology</h3>
-            <p>Advanced heart care with expert cardiologists.</p>
+            <p>Latest heart treatment with advanced monitoring systems.</p>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309">
             <h3>Emergency Care</h3>
-            <p>24/7 emergency services for critical situations.</p>
+            <p>24/7 emergency support with rapid response teams.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118">
+            <h3>Laboratory</h3>
+            <p>High-tech lab testing with accurate results.</p>
         </div>
 
     </div>
@@ -239,29 +222,20 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-    <p>© 2026 MediCare | All Rights Reserved</p>
+    <p>© 2026 MediCare | Designed with Modern UI</p>
 </footer>
 
 <script>
-// SCROLL ANIMATION
 const cards = document.querySelectorAll('.card');
 
 window.addEventListener('scroll', () => {
-    const triggerBottom = window.innerHeight * 0.8;
+    const trigger = window.innerHeight * 0.85;
 
     cards.forEach(card => {
-        const boxTop = card.getBoundingClientRect().top;
-
-        if(boxTop < triggerBottom){
+        if(card.getBoundingClientRect().top < trigger){
             card.classList.add('show');
         }
     });
-});
-
-// NAVBAR SCROLL EFFECT
-window.addEventListener('scroll', () => {
-    document.querySelector('nav').style.boxShadow =
-        window.scrollY > 20 ? "0 2px 10px rgba(0,0,0,0.1)" : "none";
 });
 </script>
 
