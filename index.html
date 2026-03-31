@@ -1,23 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Advanced Animated Website</title>
+<title>Medical Care</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -28,25 +16,24 @@
 }
 
 body {
-    background: #0f172a;
-    color: white;
+    background: #f4f9ff;
     overflow-x: hidden;
 }
 
 /* NAVBAR */
 nav {
-    position: fixed;
-    width: 100%;
-    padding: 15px 50px;
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
+    padding: 15px 50px;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
-nav h1 {
-    color: #38bdf8;
+nav h2 {
+    color: #0077ff;
 }
 
 nav ul {
@@ -55,125 +42,147 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 25px;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
+    color: #333;
     transition: 0.3s;
 }
 
 nav ul li a:hover {
-    color: #38bdf8;
+    color: #0077ff;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
-    height: 100vh;
-    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
+    height: 90vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    justify-content: space-between;
+    padding: 0 50px;
 }
 
-.hero h2 {
-    font-size: 50px;
-    animation: fadeIn 2s ease-in-out;
+.hero-text {
+    max-width: 50%;
+    animation: fadeInLeft 1.5s ease;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    color: #003366;
+}
+
+.hero-text p {
+    margin: 20px 0;
+}
+
+.hero img {
+    width: 400px;
+    animation: float 3s infinite ease-in-out;
+}
+
+/* BUTTON */
+.btn {
+    padding: 12px 25px;
+    border: none;
+    background: #0077ff;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #005bcc;
 }
 
 /* CARDS */
 .cards {
-    padding: 80px 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 30px;
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.cards h2 {
+    margin-bottom: 40px;
+}
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card {
-    background: #1e293b;
+    width: 300px;
+    padding: 20px;
     border-radius: 20px;
-    overflow: hidden;
-    transition: 0.5s;
-    position: relative;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(15px);
+    transition: 0.4s;
+    cursor: pointer;
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.card.show {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 20px;
+    border-radius: 15px;
 }
 
 .card:hover {
-    transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    transform: scale(1.05);
 }
 
-/* HOVER EFFECT */
-.card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(120deg, transparent, rgba(56,189,248,0.5), transparent);
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.card:hover::before {
-    opacity: 1;
-}
-
-/* GALLERY */
-.gallery {
-    padding: 80px 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 20px;
-}
-
-.gallery img {
-    width: 100%;
-    border-radius: 15px;
-    transition: 0.5s;
-}
-
-.gallery img:hover {
-    transform: scale(1.1) rotate(2deg);
+.card h3 {
+    margin: 15px 0;
 }
 
 /* FOOTER */
 footer {
-    padding: 20px;
+    background: #003366;
+    color: white;
+    padding: 30px;
     text-align: center;
-    background: #020617;
 }
 
 /* ANIMATIONS */
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(30px);}
-    to {opacity: 1; transform: translateY(0);}
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-.reveal {
-    opacity: 0;
-    transform: translateY(60px);
-    transition: 1s;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
 }
 
 /* RESPONSIVE */
-@media(max-width:768px){
-    .hero h2 {
-        font-size: 30px;
+@media(max-width: 900px){
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero img {
+        margin-top: 20px;
     }
 }
 </style>
@@ -181,91 +190,80 @@ footer {
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
-    <h1>MySite</h1>
+    <h2>MediCare</h2>
     <ul>
-        <li><a href="#cards">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Doctors</a></li>
+        <li><a href="#">Contact</a></li>
     </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-    <h2>Welcome to Future Web Design</h2>
+    <div class="hero-text">
+        <h1>Your Health, Our Priority</h1>
+        <p>Modern healthcare solutions with expert doctors and advanced technology.</p>
+        <button class="btn">Book Appointment</button>
+    </div>
+    <img src="https://images.unsplash.com/photo-1580281657527-47c5c2f2c6d1" alt="doctor">
 </section>
 
-<section id="cards" class="cards">
-    <div class="card reveal">
-        <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
-        <div class="card-content">
-            <h3>Web Design</h3>
-            <p>Modern and responsive designs.</p>
-        </div>
-    </div>
+<!-- CARDS -->
+<section class="cards">
+    <h2>Our Services</h2>
+    <div class="card-container">
 
-    <div class="card reveal">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
-        <div class="card-content">
-            <h3>Development</h3>
-            <p>Fast and scalable solutions.</p>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1588776814546-ec7e67c44e5f">
+            <h3>General Checkup</h3>
+            <p>Routine health checkups to ensure your well-being.</p>
         </div>
-    </div>
 
-    <div class="card reveal">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
-        <div class="card-content">
-            <h3>Marketing</h3>
-            <p>Grow your audience digitally.</p>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322">
+            <h3>Cardiology</h3>
+            <p>Advanced heart care with expert cardiologists.</p>
         </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+            <h3>Emergency Care</h3>
+            <p>24/7 emergency services for critical situations.</p>
+        </div>
+
     </div>
 </section>
 
-<section id="gallery" class="gallery">
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="reveal">
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" class="reveal">
-    <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" class="reveal">
-    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e" class="reveal">
-</section>
-
+<!-- FOOTER -->
 <footer>
-    <p>© 2026 Advanced Website | All Rights Reserved</p>
+    <p>© 2026 MediCare | All Rights Reserved</p>
 </footer>
 
 <script>
-// SMOOTH SCROLL
-$('a').on('click', function(e) {
-    if (this.hash !== "") {
-        e.preventDefault();
-        const hash = this.hash;
-        $('html, body').animate({
-            scrollTop: $(hash).offset().top
-        }, 800);
-    }
-});
-
 // SCROLL ANIMATION
-$(window).on('scroll', function() {
-    $('.reveal').each(function() {
-        let top = $(this).offset().top;
-        let windowHeight = $(window).height();
-        let scroll = $(window).scrollTop();
+const cards = document.querySelectorAll('.card');
 
-        if (scroll > top - windowHeight + 100) {
-            $(this).addClass('active');
+window.addEventListener('scroll', () => {
+    const triggerBottom = window.innerHeight * 0.8;
+
+    cards.forEach(card => {
+        const boxTop = card.getBoundingClientRect().top;
+
+        if(boxTop < triggerBottom){
+            card.classList.add('show');
         }
     });
 });
 
 // NAVBAR SCROLL EFFECT
-$(window).scroll(function(){
-    if($(this).scrollTop() > 50){
-        $('nav').css("background", "rgba(0,0,0,0.9)");
-    } else {
-        $('nav').css("background", "rgba(0,0,0,0.5)");
-    }
+window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.boxShadow =
+        window.scrollY > 20 ? "0 2px 10px rgba(0,0,0,0.1)" : "none";
 });
 </script>
 
-</body>
-</html>
 </body>
 </html>
